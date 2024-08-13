@@ -1,0 +1,6 @@
+#@values/schema
+---
+git:
+  url: https://github.com/Tanzu-Solutions-Engineering/waas-gitops.git
+  ref: origin/main
+  sub_path: clusters
