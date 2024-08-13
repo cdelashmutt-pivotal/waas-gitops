@@ -1,5 +1,6 @@
-#@values/schema
+#@data/values-schema
 ---
+clustername: "cluster-name-not-found"
 git:
   url: https://github.com/Tanzu-Solutions-Engineering/waas-gitops.git
   ref: origin/main

@@ -12,6 +12,7 @@ spec:
       paths:
         #@yaml/text-templated-strings
         config/app.yaml: |
+          #@ load("@ytt:data", "data")
           ---
           apiVersion: kappctrl.k14s.io/v1alpha1
           kind: App
@@ -24,7 +25,7 @@ spec:
               - git:
                   url: (@= data.values.git.url @)
                   ref: (@= data.values.git.ref @)
-                  subPath: (@= data.values.git.sub_path+"/"+data.values.clustername @) 
+                  subPath: #@ "(@= data.values.git.sub_path+"/" @)" + data.values.clustername
             template:
               - ytt:
                   paths: 
@@ -33,10 +34,7 @@ spec:
               - kapp: {}
   template:
     - ytt:
-        paths:
-        - config
         valuesFrom:
-        - path: values
         - secretRef:
             name: cluster-name
   deploy:
