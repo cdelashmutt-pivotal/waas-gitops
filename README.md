@@ -12,7 +12,6 @@
 ```
 kapp deploy -a kapp-controller -f https://github.com/carvel-dev/kapp-controller/releases/latest/download/release.yml
 ```
-
 #### Install secretgen-controller
 ```
 kapp deploy -a secret-gen-controller -f https://github.com/carvel-dev/secretgen-controller/releases/latest/download/release.yml
